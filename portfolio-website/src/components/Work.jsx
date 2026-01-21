@@ -11,7 +11,46 @@ const Work = () => {
     description:
     "where an unknown printer took a gallery of type and scrambled it 
      to make a type specimen book .  it has survived not only five centuries
-     but also the leap into electronic typesetting, remaining essentially unchanged.",
+     but also the leap into electro{
+       id: 2,
+       title: "Shoe store Ecommerce Landing Page", 
+       description: 
+       "it has survived not only five centuries, but also the leap into electronic electronic typesetting, remaining essentially unchanged.",
+       workImage: Work2,
+     },import React from "react";
+     import Work1 from "../assets/Work1.png";
+     import Work2 from "../assets/Work2.png";
+     import Work3 from "../assets/Work3.png";
+     
+     const Work = () => {
+       const caseStudies = [
+         { 
+           id: 1, 
+           title: "Bakery Landing Page Design", 
+           description:
+           "where an unknown printer took a gallery of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+           workImage: Work1,
+         },
+         {
+           id: 2,
+           title: "Shoe store Ecommerce Landing Page", 
+           description: 
+           "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+           workImage: Work2,
+         },
+         {
+           id: 3, 
+           title: "Another project", 
+           description: 
+           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus vel tellus vestibulum elementum.",
+           workImage: Work3,
+         },
+       ];
+     
+       // ... rest of the code ...
+     };
+     
+     export default Work;nic typesetting, remaining essentially unchanged.",
 
     workImage: Work1,
   
@@ -38,30 +77,28 @@ const Work = () => {
     },
    ]; 
   return (
-    <div id="work"className="container mx-auto px-4 py-12">
-      <h3 className="text-yellow-500 font-semibold text-center uppercase mb-2">
+    <div id="work"className="container px-4 py-12 mx-auto">
+      <h3 className="mb-2 font-semibold text-center text-yellow-500 uppercase">
         Work
         </h3>
-      <h2 className="text-4xl font-bold text-center 
-      mb-12">my Case Studies</h2>
+      <h2 className="mb-12 text-4xl font-bold text-center">my Case Studies</h2>
         {caseStudies.map((study, index) => (
          <div 
          key={study.id}className={`flex flex-col lg:flex-row 
          items-center justify-between mb-16 lg:mb-24 $
          {index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}>
-          <div className="w-full lg:w-1/3 p-4">
+          <div className="w-full p-4 lg:w-1/3">
             <img src={study.workImage}  
-            className="w-full h-full object-cover rounded-lg shadow-lg" />
+            className="object-cover w-full h-full rounded-lg shadow-lg" />
           </div>
-         <div className="w-full lg:w-1/2 p-4">
+         <div className="w-full p-4 lg:w-1/2">
           <div className="flex items-center mb-4">
-            <span className="text-3xl font-bold text-yellow-500 mr-2">{'0${index + 1}'}</span>
+            <span className="mr-2 text-3xl font-bold text-yellow-500">{'0${index + 1}'}</span>
             <h3 className="text-2xl font-bold">{study.title}</h3>
             </div>
-            <p className="text-gray-600 mb-4">{study.description}
+            <p className="mb-4 text-gray-600">{study.description}
             </p> 
-            <botton className="border-spacing-2 border-yellow-500
-            text-yellow-500 px-4 py-2 rounded-full hover:bg-yellow-500 hover:text-white">Details</botton> 
+            <botton className="px-4 py-2 text-yellow-500 border-yellow-500 rounded-full border-spacing-2 hover:bg-yellow-500 hover:text-white">Details</botton> 
          </div>
          </div>
         ))}
